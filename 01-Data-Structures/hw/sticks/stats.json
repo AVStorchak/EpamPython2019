@@ -1,0 +1,32 @@
+{"statistics": {
+		"wine": {
+			"Gew\u00fcrztraminer" : {"avarege_price": "26.17", "min_price": "6", "max_price": "197", "most_common_region": "Alsace", "most_common_country": "France", "avarage_score": "88.56"},
+			"Riesling" : {"avarege_price": "32.6", "min_price": "5", "max_price": "775", "most_common_region": "Alsace", "most_common_country": "Germany", "avarage_score": "89.48"},
+			"Merlot" : {"avarege_price": "29.27", "min_price": "4", "max_price": "625", "most_common_region": "Columbia Valley (WA)", "most_common_country": "US", "avarage_score": "87.16"},
+			"Madera" : {"avarege_price": "null", "min_price": "null", "max_price": "null", "most_common_region": "null", "most_common_country": "null", "avarage_score": "null"},
+			"Tempranillo" : {"avarege_price": "31.14", "min_price": "4", "max_price": "600", "most_common_region": "Rioja", "most_common_country": "Spain", "avarage_score": "87.47"},
+			"Red Blend" : {"avarege_price": "36.09", "min_price": "5", "max_price": "500", "most_common_region": "Toscana", "most_common_country": "Italy", "avarage_score": "88.37"},
+		},
+		"most_expensive_wine": "Ch\u00e2teau les Ormes Sorbet 2013  M\u00e9doc",
+		"cheapest_wine": [
+			{"Bandit NV Chardonnay (California)"},
+			{"Bandit NV Merlot (California)"},
+			{"Bandit NV Merlot (California)"},
+			{"Broke Ass 2009 Red Malbec-Syrah (Mendoza)"},
+			{"Cramele Recas 2011 UnWineD Pinot Grigio (Viile Timisului)"},
+			{"Dancing Coyote 2015 White (Clarksburg)"},
+			{"Felix Solis 2012 Flirty Bird White (Vino de la Tierra de Castilla)"},
+			{"Felix Solis 2013 Flirty Bird Syrah (Vino de la Tierra de Castilla)"},
+			{"Pam's Cuties NV Unoaked Chardonnay (California)"},
+			{"Terrenal 2010 Cabernet Sauvignon (Yecla)"},
+			{"Terrenal 2010 Estate Bottled Tempranillo (Yecla)"},
+		]
+		"highest_score": "100",
+		"lowest_score": "80",
+		"most_expensive_coutry": "Bosnia and Herzegovina",
+		"cheapest_coutry": "Bosnia and Herzegovina",
+		"most_rated_country": "Egypt",
+		"underrated_country": "Egypt",
+		"most_active_commentator": "Roger Voss",
+	 }
+}
