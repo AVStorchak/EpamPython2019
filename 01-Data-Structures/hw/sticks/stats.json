@@ -1,6 +1,6 @@
 {"statistics": {
 		"wine": {
-			"Gew\u00fcrztraminer" : {
+			"Gew\u00fcrztraminer": {
 				"avarege_price": "26.17", 
 				"min_price": "6", 
 				"max_price": "197", 
@@ -8,7 +8,7 @@
 				"most_common_country": "France", 
 				"avarage_score": "88.56"
 				}
-			"Riesling" : {
+			"Riesling": {
 				"avarege_price": "32.6", 
 				"min_price": "5", 
 				"max_price": "775", 
@@ -16,7 +16,7 @@
 				"most_common_country": "Germany", 
 				"avarage_score": "89.48"
 				}
-			"Merlot" : {
+			"Merlot": {
 				"avarege_price": "29.27", 
 				"min_price": "4", 
 				"max_price": "625", 
@@ -24,7 +24,7 @@
 				"most_common_country": "US", 
 				"avarage_score": "87.16"
 				}
-			"Madera" : {
+			"Madera": {
 				"avarege_price": "null", 
 				"min_price": "null", 
 				"max_price": "null", 
@@ -32,7 +32,7 @@
 				"most_common_country": "null", 
 				"avarage_score": "null"
 				}
-			"Tempranillo" : {
+			"Tempranillo": {
 				"avarege_price": "31.14", 
 				"min_price": "4", 
 				"max_price": "600", 
@@ -40,7 +40,7 @@
 				"most_common_country": "Spain", 
 				"avarage_score": "87.47"
 				}
-			"Red Blend" : {
+			"Red Blend": {
 				"avarege_price": "36.09", 
 				"min_price": "5", 
 				"max_price": "500", 
