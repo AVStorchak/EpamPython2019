@@ -29,6 +29,7 @@ class Teacher():
         self.last_name = last_name
         self.first_name = first_name
 
-    def create_homework(self, text, term):
+    @staticmethod
+    def create_homework(text, term):
         created_homework = Homework(text, term)
         return created_homework
