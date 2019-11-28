@@ -6,13 +6,13 @@ def instances_counter(cls):
         orig_init(self, *args, **kwargs)
         cls.instance_count += 1
 
-    @staticmethod
-    def get_created_instances():
-        print(cls.instance_count)
+    @classmethod
+    def get_created_instances(cls):
+        print (cls.instance_count)
 
-    @staticmethod
-    def reset_instances_counter():
-        print(cls.instance_count)
+    @classmethod
+    def reset_instances_counter(cls):
+        print (cls.instance_count)
         cls.instance_count = 0
 
     cls.__init__ = new_init

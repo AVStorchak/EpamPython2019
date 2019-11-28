@@ -34,12 +34,12 @@ class Person:
 
 
 class Student(Person):
-    def do_homework(self, task, result):
-        result = HomeworkResult(self, task, result)
+    def do_homework(self, task, solution):
+        result = HomeworkResult(self, task, solution)
         if task.is_active():
             return result
         else:
-            raise DeadlineError ('You are late')
+            raise DeadlineError('You are late')
 
 
 class Teacher(Person):
@@ -50,16 +50,17 @@ class Teacher(Person):
         created_homework = Homework(text, term)
         return created_homework
 
-    def check_homework(self, hw_done):
+    @classmethod
+    def check_homework(cls, hw_done):
         if len(hw_done.solution) > 5:
-            if hw_done not in self.homework_done[hw_done.homework]:
-                self.homework_done[hw_done.homework].append(hw_done)
+            cls.homework_done[hw_done.homework].add(hw_done)
             return True
         else:
             return False
 
-    def reset_results(self, task=None):
+    @classmethod
+    def reset_results(cls, task=None):
         if task is None:
-            self.homework_done.clear()
+            cls.homework_done.clear()
         else:
-            del self.homework_done[task]
+            del cls.homework_done[task]
