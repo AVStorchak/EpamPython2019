@@ -1,23 +1,24 @@
 def instances_counter(cls):
-    instance_count = 0
+    cls.instance_count = 0
+    orig_init = cls.__init__
 
-    class New_cls(cls):
-        def __init__(self):
-            nonlocal instance_count
-            instance_count += 1
+    def new_init(self, *args, **kwargs):
+        orig_init(self, *args, **kwargs)
+        cls.instance_count += 1
 
-        @classmethod
-        def get_created_instances(cls):
-            nonlocal instance_count
-            print(instance_count)
+    @staticmethod
+    def get_created_instances():
+        print(cls.instance_count)
 
-        @classmethod
-        def reset_instances_counter(cls):
-            nonlocal instance_count
-            print(instance_count)
-            instance_count = 0
+    @staticmethod
+    def reset_instances_counter():
+        print(cls.instance_count)
+        cls.instance_count = 0
 
-    return New_cls
+    cls.__init__ = new_init
+    cls.get_created_instances = get_created_instances
+    cls.reset_instances_counter = reset_instances_counter   
+    return cls
 
 
 @instances_counter
