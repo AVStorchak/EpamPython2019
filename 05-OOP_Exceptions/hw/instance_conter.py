@@ -8,12 +8,13 @@ def instances_counter(cls):
 
     @classmethod
     def get_created_instances(cls):
-        print (cls.instance_count)
+        return cls.instance_count
 
     @classmethod
     def reset_instances_counter(cls):
-        print (cls.instance_count)
+        last_count = cls.instance_count
         cls.instance_count = 0
+        return last_count
 
     cls.__init__ = new_init
     cls.get_created_instances = get_created_instances
