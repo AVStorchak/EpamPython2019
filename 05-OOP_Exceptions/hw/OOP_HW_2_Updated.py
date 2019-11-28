@@ -2,6 +2,10 @@ import datetime
 from collections import defaultdict
 
 
+class DeadlineError(Exception):
+    '''You are late'''
+
+
 class Homework:
     def __init__(self, text, term):
         self.text = text
@@ -23,10 +27,6 @@ class HomeworkResult:
         self.created = datetime.datetime.now()
 
 
-class DeadlineError(Exception):
-    '''You are late'''
-
-
 class Person:
     def __init__(self, last_name, first_name):
         self.last_name = last_name
@@ -39,28 +39,27 @@ class Student(Person):
         if task.is_active():
             return result
         else:
-            raise DeadlineError('You are late')
+            raise DeadlineError ('You are late')
 
 
 class Teacher(Person):
-    homework_done = defaultdict(list)
+    homework_done = defaultdict(set)
 
     @staticmethod
     def create_homework(text, term):
         created_homework = Homework(text, term)
         return created_homework
 
-    @staticmethod
-    def check_homework(hw_done):
+    def check_homework(self, hw_done):
         if len(hw_done.solution) > 5:
-            if hw_done not in Teacher.homework_done[hw_done.homework]:
-                Teacher.homework_done[hw_done.homework].append(hw_done)
+            if hw_done not in self.homework_done[hw_done.homework]:
+                self.homework_done[hw_done.homework].append(hw_done)
             return True
         else:
             return False
 
-    def reset_results(task=None):
+    def reset_results(self, task=None):
         if task is None:
-            Teacher.homework_done.clear()
+            self.homework_done.clear()
         else:
-            del Teacher.homework_done[task]
+            del self.homework_done[task]
