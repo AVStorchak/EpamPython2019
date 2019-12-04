@@ -43,11 +43,12 @@ def atom(value=None):
         print(atom_value)
 
     def process_value(*args):
+        nonlocal atom_value
         for func in args:
             try:
-                func(atom_value)
+                atom_value = func(atom_value)
             except TypeError:
-                func()
+                atom_value = func()
         print("Final value:", atom_value)
 
     def delete_value():
