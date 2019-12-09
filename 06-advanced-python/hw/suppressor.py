@@ -6,5 +6,4 @@ class Suppressor:
         pass
 
     def __exit__(self, exc_type, exc_value, traceback):
-        if exc_type in self.errors:
-            return True
+        return exc_type in self.errors or issubclass(exc_type, (self.errors))
