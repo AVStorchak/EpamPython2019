@@ -68,39 +68,12 @@ class Quaternion:
         """
         return self.norm
 
-    def __lt__(self, other):
-        """Here and subsequently the comparisons are made based on quaternion norms"""
-        if isinstance(other, Quaternion):
-            return self.norm < other.norm
-        else:
-            return ('Incomparable values!')
-
-    def __le__(self, other):
-        if isinstance(other, Quaternion):
-            return self.norm <= other.norm
-        else:
-            return ('Incomparable values!')
-
     def __eq__(self, other):
         if isinstance(other, Quaternion):
-            return self.norm == other.norm
-        else:
-            return ('Incomparable values!')
-
-    def __ne__(self, other):
-        if isinstance(other, Quaternion):
-            return self.norm != other.norm
-        else:
-            return ('Incomparable values!')
-
-    def __ge__(self, other):
-        if isinstance(other, Quaternion):
-            return self.norm >= other.norm
-        else:
-            return ('Incomparable values!')
-
-    def __gt__(self, other):
-        if isinstance(other, Quaternion):
-            return self.norm > other.norm
+            q = self.a == other.a
+            x = self.b == other.b
+            y = self.c == other.c
+            z = self.d == other.d
+            return q and x and y and z
         else:
             return ('Incomparable values!')
