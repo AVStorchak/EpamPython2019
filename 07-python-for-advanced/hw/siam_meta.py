@@ -1,3 +1,6 @@
+import weakref
+
+
 class SiamMeta(type):
 
     def __new__(mcls, name, bases, attrs):
@@ -14,8 +17,6 @@ class SiamMeta(type):
         return cls
 
     def __call__(cls, *args, **kwargs):
-        import weakref
-
         def reach_other_instance(*args, **kwargs):
             processed_kwargs = [i[1] for i in sorted(kwargs.items(),
                                 key=lambda item: item[0])]
