@@ -1,0 +1,122 @@
+Sun Dec 22 17:08:52 2019    D:\GoldenDict\output.txt
+
+         2779 function calls (2736 primitive calls) in 24.570 seconds
+
+   Ordered by: call count
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+      316    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+      281    0.009    0.000    0.009    0.000 {method 'read' of '_io.BufferedReader' objects}
+      273    0.138    0.001    0.138    0.001 {method 'update' of '_sha256.sha256' objects}
+      257    0.000    0.000    0.000    0.000 C:\Anaconda\lib\hashlib.py:173(<genexpr>)
+      257    0.000    0.000    0.000    0.000 C:\Anaconda\lib\hashlib.py:174(<genexpr>)
+      114    0.000    0.000    0.000    0.000 {method 'rstrip' of 'str' objects}
+       66    0.000    0.000    0.000    0.000 {built-in method builtins.isinstance}
+       63    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:222(_verbose_message)
+       58    0.000    0.000    0.000    0.000 {method 'join' of 'str' objects}
+       56    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:58(<listcomp>)
+       56    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:56(_path_join)
+       54    0.000    0.000    0.000    0.000 {built-in method nt.fspath}
+       47    0.000    0.000    0.000    0.000 {built-in method builtins.hasattr}
+       40    0.000    0.000    0.000    0.000 {method 'get' of 'dict' objects}
+       38    0.000    0.000    0.000    0.000 {built-in method _imp.acquire_lock}
+       38    0.000    0.000    0.000    0.000 {built-in method _imp.release_lock}
+       32    0.000    0.000    0.000    0.000 C:\Anaconda\lib\ntpath.py:122(splitdrive)
+       32    0.000    0.000    0.000    0.000 {method 'replace' of 'str' objects}
+       32    0.000    0.000    0.000    0.000 {method 'rpartition' of 'str' objects}
+       30    0.000    0.000    0.000    0.000 {built-in method builtins.getattr}
+       28    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:321(<genexpr>)
+       26    0.002    0.000    0.002    0.000 {built-in method nt.stat}
+       20    0.000    0.000    0.000    0.000 {built-in method _thread.allocate_lock}
+       20    0.000    0.000    0.000    0.000 {built-in method _thread.get_ident}
+       18    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:855(__enter__)
+       18    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:859(__exit__)
+       18    0.000    0.000    0.001    0.000 <frozen importlib._bootstrap_external>:74(_path_stat)
+       17    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1203(_path_importer_cache)
+     16/1    0.000    0.000    0.006    0.006 <frozen importlib._bootstrap>:211(_call_with_frames_removed)
+       16    0.000    0.000    0.000    0.000 C:\Anaconda\lib\ntpath.py:75(join)
+       14    0.000    0.000    0.001    0.000 C:\Anaconda\lib\hashlib.py:73(__get_builtin_constructor)
+       14    0.000    0.000    0.000    0.000 {built-in method builtins.globals}
+       13    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:36(_relax_case)
+       13    0.000    0.000    0.002    0.000 <frozen importlib._bootstrap_external>:1356(find_spec)
+       10    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:58(__init__)
+       10    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:78(acquire)
+       10    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:103(release)
+       10    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:143(__init__)
+       10    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:147(__enter__)
+       10    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:151(__exit__)
+       10    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:176(cb)
+       10    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:157(_get_module_lock)
+       10    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:369(__init__)
+       10    0.000    0.000    0.004    0.000 <frozen importlib._bootstrap>:576(module_from_spec)
+     10/1    0.000    0.000    0.007    0.007 <frozen importlib._bootstrap>:663(_load_unlocked)
+       10    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:719(find_spec)
+       10    0.000    0.000    0.002    0.000 <frozen importlib._bootstrap>:882(_find_spec)
+     10/1    0.000    0.000    0.007    0.007 <frozen importlib._bootstrap>:948(_find_and_load_unlocked)
+     10/1    0.000    0.000    0.007    0.007 <frozen importlib._bootstrap>:978(_find_and_load)
+       10    0.000    0.000    0.000    0.000 {built-in method _imp.is_builtin}
+        8    0.000    0.000    0.000    0.000 C:\Anaconda\lib\genericpath.py:27(isfile)
+        8    0.001    0.000    0.149    0.019 file_hash.py:7(get_hash)
+        8    0.000    0.000    0.000    0.000 {built-in method _stat.S_ISREG}
+        8    0.000    0.000    0.000    0.000 {method 'hexdigest' of '_sha256.sha256' objects}
+        8    0.001    0.000    0.001    0.000 {built-in method io.open}
+        8    0.000    0.000    0.000    0.000 {built-in method _sha256.sha256}
+        7    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:307(__init__)
+        7    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:311(__enter__)
+        7    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:318(__exit__)
+        7    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:416(parent)
+        7    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:424(has_location)
+        7    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:504(_init_module_attrs)
+        7    0.000    0.000    0.000    0.000 {built-in method builtins.any}
+        6    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:232(_requires_builtin_wrapper)
+        6    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:433(spec_from_loader)
+        6    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:740(create_module)
+        6    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:748(exec_module)
+        6    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:765(is_package)
+        6    0.000    0.000    0.000    0.000 {built-in method _imp.create_builtin}
+        6    0.000    0.000    0.000    0.000 {built-in method _imp.exec_builtin}
+        4    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:792(find_spec)
+        4    0.000    0.000    0.001    0.000 <frozen importlib._bootstrap_external>:84(_path_is_mode_type)
+        4    0.000    0.000    0.001    0.000 <frozen importlib._bootstrap_external>:93(_path_isfile)
+        4    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:574(spec_from_file_location)
+        4    0.000    0.000    0.002    0.000 <frozen importlib._bootstrap_external>:1240(_get_spec)
+        4    0.000    0.000    0.002    0.000 <frozen importlib._bootstrap_external>:1272(find_spec)
+        4    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1351(_get_spec)
+        4    0.000    0.000    0.000    0.000 {built-in method nt.getcwd}
+        4    0.000    0.000    0.000    0.000 {built-in method _imp.is_frozen}
+        3    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:51(_r_long)
+        3    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1029(__init__)
+        3    0.000    0.000    0.004    0.001 <frozen importlib._bootstrap_external>:1040(create_module)
+        3    0.000    0.000    0.000    0.000 {built-in method from_bytes}
+        3    0.004    0.001    0.004    0.001 {built-in method _imp.create_dynamic}
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:403(cached)
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:62(_path_split)
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:1009(_handle_fromlist)
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:271(cache_from_source)
+        2    0.000    0.000    0.000    0.000 {method 'rsplit' of 'str' objects}
+      2/1    0.000    0.000   24.570   24.570 {built-in method builtins.exec}
+        2   24.412   12.206   24.412   12.206 {built-in method builtins.input}
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:35(_new_module)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:369(_get_cached)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:401(_check_name_wrapper)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:438(_classify_pyc)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:471(_validate_timestamp_pyc)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:523(_compile_bytecode)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:719(create_module)
+        1    0.000    0.000    0.007    0.007 <frozen importlib._bootstrap_external>:722(exec_module)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:793(get_code)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:884(__init__)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:909(get_filename)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:914(get_data)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:951(path_stats)
+        1    0.000    0.000    0.001    0.001 file_hash.py:19(<listcomp>)
+        1    0.000    0.000   24.570   24.570 file_hash.py:1(<module>)
+        1    0.000    0.000    0.006    0.006 C:\Anaconda\lib\hashlib.py:54(<module>)
+        1    0.000    0.000    0.000    0.000 {built-in method nt.listdir}
+        1    0.000    0.000    0.000    0.000 {method 'read' of '_io.FileIO' objects}
+        1    0.000    0.000    0.000    0.000 {method 'write' of '_io.TextIOWrapper' objects}
+        1    0.000    0.000    0.000    0.000 {method 'endswith' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 {method 'format' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 {built-in method _imp._fix_co_filename}
+        1    0.000    0.000    0.000    0.000 {built-in method marshal.loads}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
