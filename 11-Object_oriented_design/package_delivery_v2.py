@@ -9,7 +9,7 @@ class BaseWarehouse:
         fleet: Dictionary of transport units operating from the warehouse,
         dictionary keys are Transport class objects, dictionary values are
         actual operation times for such Transport class objects.
-        stock: Queue of packages do be dispatched, each package has
+        stock: Queue of packages to be dispatched, each package has
         a format of [destination, delivery_time], where destination is the
         code of the final warehouse for the package, delivery_time is
         absolute time of operation with the package (delivery to the final or
