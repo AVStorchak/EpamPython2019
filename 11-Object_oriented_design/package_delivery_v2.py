@@ -12,7 +12,7 @@ class BaseWarehouse:
         stock: Queue of packages to be dispatched, each package has
         a format of [destination, delivery_time], where destination is the
         code of the final warehouse for the package, delivery_time is
-        absolute time of operation with the package (delivery to the final or
+        absolute time of an operation with the package (delivery to the final or
         to the transfer warehouse).
     """
     def __init__(self, stock):
@@ -26,12 +26,12 @@ class BaseWarehouse:
         by calling the deliver function of the Transport class.
 
         Parameters:
-            package: the next package from the queue
+            package: The next package from the queue
             transport: The transport unit is selected from the
             fleet by the lowest time en route.
             address: The address is derived from the dictionary of final
             warehouses and their codes. If the final warehouse must be
-            reached via the transfer warehouse, such transfer warehouse is
+            reached via a transfer warehouse, such transfer warehouse is
             selected as the current package address.
         """
         transport = min(self.fleet, key=self.fleet.get)
@@ -50,7 +50,7 @@ class TransferWarehouse(BaseWarehouse):
     """
     This is a child class of the BaseWarehouse class. Since transfer warehouses
     do not have initial stock and are located at some distance from base
-    warehouses, the __init__ method is changed accordingly.
+    warehouses, the __init__ method was changed accordingly.
     """
     def __init__(self, delivery_time):
         self.fleet = {}
@@ -63,7 +63,7 @@ class FinalWarehouse:
     This is a class for warehouses that are final destinations for packages.
 
     Attributes:
-        final_warehouses: Class attribute to keep a record of final
+        final_warehouses: Class attribute to keep record of final
         warehouses and their codes.
         delivery_time: Time of package delivery to the warehouse, counted
         from the nearest dispatch point.
