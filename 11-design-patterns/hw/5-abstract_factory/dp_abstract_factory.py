@@ -4,7 +4,7 @@ import yaml
 
 class AbstractStarter(ABC):
     @abstractmethod
-    def prepare(self):
+    def prepare(self, menu):
         pass
 
 
@@ -28,7 +28,7 @@ class ConcreteChineseStarter(AbstractStarter):
 
 class AbstractSecondCourse(ABC):
     @abstractmethod
-    def prepare(self):
+    def prepare(self, menu):
         pass
 
 
@@ -52,7 +52,7 @@ class ConcreteChineseSecondCourse(AbstractSecondCourse):
 
 class AbstractDrink(ABC):
     @abstractmethod
-    def prepare(self):
+    def prepare(self, menu):
         pass
 
 
@@ -76,15 +76,15 @@ class ConcreteChineseDrink(AbstractDrink):
 
 class AbstractFactory(ABC):
     @abstractmethod
-    def get_starter(self):
+    def get_starter(self, menu):
         pass
 
     @abstractmethod
-    def get_second_course(self):
+    def get_second_course(self, menu):
         pass
 
     @abstractmethod
-    def get_drink(self):
+    def get_drink(self, menu):
         pass
 
 
