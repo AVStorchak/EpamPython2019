@@ -25,7 +25,7 @@ class BaseWarehouse:
             warehouses and their codes.
         """
         global final_warehouses
-        
+
         self.fleet = sorted(self.fleet, key=lambda x: x.time_en_route)
         transport = self.fleet[0]
         package = self.stock.popleft()
@@ -126,7 +126,7 @@ if __name__ == '__main__':
     port = TransferWarehouse(1, ship_1)
     warehouse_a = FinalWarehouse('A', 4, port)
     warehouse_b = FinalWarehouse('B', 5)
-    
+
     while factory.stock:
         factory.dispatch_shipment()
 
