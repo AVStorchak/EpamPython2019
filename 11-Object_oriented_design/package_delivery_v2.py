@@ -27,12 +27,7 @@ class BaseWarehouse:
         self.fleet = sorted(self.fleet, key=lambda x: x.time_en_route)
         transport = self.fleet[0]
         package = self.stock.popleft()
-
-        if logistics.structure[package[0]].transfer_warehouse is None or \
-           logistics.structure[package[0]].transfer_warehouse == self:
-            address = logistics.structure[package[0]]
-        else:
-            address = logistics.structure[package[0]].transfer_warehouse
+        address = logistics.get_address(self, package)
 
         transport.deliver(package, address)
 
@@ -49,6 +44,12 @@ class TransferWarehouse(BaseWarehouse):
         self.stock = queue.deque()
         for unit in transport_units:
             self.fleet[unit] = unit.time_en_route
+
+    def receive_package(self, package):
+        """
+        Adds received packages to the stock.
+        """
+        self.stock.append(package)
 
 
 class FinalWarehouse:
@@ -71,6 +72,12 @@ class FinalWarehouse:
         self.transfer_warehouse = transfer_warehouse
         self.stock = queue.deque()
 
+    def receive_package(self, package):
+        """
+        Adds received packages to the stock.
+        """
+        self.stock.append(package)
+
     def get_time(self):
         """
         The function to get the arrival time of the latest package.
@@ -92,6 +99,17 @@ class Logistics():
         self.structure = {}
         for warehouse in args:
             self.structure[warehouse.code] = warehouse
+
+    def get_address(self, shipping_warehouse, package):
+        """
+        Retruns next delivery address for the specified package.
+        """
+        if self.structure[package[0]].transfer_warehouse is None or \
+           self.structure[package[0]].transfer_warehouse == shipping_warehouse:
+            address = self.structure[package[0]]
+        else:
+            address = self.structure[package[0]].transfer_warehouse
+        return address
 
 
 class Transport:
@@ -120,7 +138,7 @@ class Transport:
             package[1] = self.time_en_route
 
         package[1] += address.delivery_time
-        address.stock.append(package)
+        address.receive_package(package)
         print(f'Package delivered to {address}, timestamp {package[1]}')
         self.time_en_route += 2*address.delivery_time
 
