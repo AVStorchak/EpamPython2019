@@ -13,7 +13,7 @@ class BaseWarehouse:
         packages = [[i, 0] for i in stock]
         self.stock = queue.deque(packages)
 
-    def dispatch_shipment(self):
+    def dispatch_shipment(self, logistics):
         """
         The function to dispatch a package to the specified address
         by calling the deliver function of the Transport class.
@@ -24,17 +24,15 @@ class BaseWarehouse:
             address: The address is derived from the dictionary of final
             warehouses and their codes.
         """
-        global final_warehouses
-
         self.fleet = sorted(self.fleet, key=lambda x: x.time_en_route)
         transport = self.fleet[0]
         package = self.stock.popleft()
 
-        if final_warehouses[package[0]].transfer_warehouse is None or \
-           final_warehouses[package[0]].transfer_warehouse == self:
-            address = final_warehouses[package[0]]
+        if logistics.structure[package[0]].transfer_warehouse is None or \
+           logistics.structure[package[0]].transfer_warehouse == self:
+            address = logistics.structure[package[0]]
         else:
-            address = final_warehouses[package[0]].transfer_warehouse
+            address = logistics.structure[package[0]].transfer_warehouse
 
         transport.deliver(package, address)
 
@@ -68,7 +66,7 @@ class FinalWarehouse:
     global final_warehouses
 
     def __init__(self, code, delivery_time, transfer_warehouse=None):
-        final_warehouses[code] = self
+        self.code = code
         self.delivery_time = delivery_time
         self.transfer_warehouse = transfer_warehouse
         self.stock = queue.deque()
@@ -83,6 +81,17 @@ class FinalWarehouse:
         except IndexError:
             time = 0
         return time
+
+
+class Logistics():
+    """
+    A class designated to store data on transport connection
+    between warehouses.
+    """
+    def __init__(self, *args):
+        self.structure = {}
+        for warehouse in args:
+            self.structure[warehouse.code] = warehouse
 
 
 class Transport:
@@ -117,21 +126,22 @@ class Transport:
 
 
 if __name__ == '__main__':
-    final_warehouses = {}
     truck_1 = Transport()
     truck_2 = Transport()
     ship_1 = Transport()
+
     delivery_order = input("Please provide the delivery order ")
     factory = BaseWarehouse(delivery_order, truck_1, truck_2)
     port = TransferWarehouse(1, ship_1)
     warehouse_a = FinalWarehouse('A', 4, port)
     warehouse_b = FinalWarehouse('B', 5)
+    current_logistics = Logistics(warehouse_a, warehouse_b)
 
     while factory.stock:
-        factory.dispatch_shipment()
+        factory.dispatch_shipment(current_logistics)
 
     while port.stock:
-        port.dispatch_shipment()
+        port.dispatch_shipment(current_logistics)
 
     print("Total delivery time is", max(warehouse_a.get_time(),
                                         warehouse_b.get_time()))
