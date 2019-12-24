@@ -34,3 +34,19 @@ class MyTubeUser:
 
     def update(self, message):
         print(f"Dear {self._name}, {message}")
+
+
+matt = MyTubeUser('Matt')
+john = MyTubeUser('John')
+erica = MyTubeUser('Erica')
+
+tinfoil_hat = MyTubeChannel('Tinfoil Hat', john)
+tinfoil_hat.subscribe(matt)
+tinfoil_hat.subscribe(erica)
+freshest_theories = ['Moon landing was fake', '9/11 was an inside job', 'Global warming is a hoax']
+stay_woke_playlist = {'Stay Woke': freshest_theories}
+
+for video in freshest_theories:
+    tinfoil_hat.publish_video(video)
+
+tinfoil_hat.publish_playlist(stay_woke_playlist)
