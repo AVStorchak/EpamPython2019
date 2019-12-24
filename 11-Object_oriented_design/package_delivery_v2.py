@@ -64,8 +64,6 @@ class FinalWarehouse:
         warehouse (where available).
         stock: The queue of incoming packages.
     """
-    global final_warehouses
-
     def __init__(self, code, delivery_time, transfer_warehouse=None):
         self.code = code
         self.delivery_time = delivery_time
