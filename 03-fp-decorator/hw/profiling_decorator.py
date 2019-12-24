@@ -92,8 +92,20 @@ fib2_count = {'count': 0, 'duration': 0}
 fib3_count = {'count': 0, 'duration': 0}
 fib4_count = {'count': 0, 'duration': 0}
 
-#for n from 0 to 9999 (from 0 to 34 for fibonacci_1):
-#fibonacci_1: {'count': 35, 'duration': 32.23584342002869} - worst result
-#fibonacci_2: {'count': 10000, 'duration': 0.022001981735229492} - best result
-#fibonacci_3: {'count': 10000, 'duration': 12.613720655441284}
-#fibonacci_4: {'count': 10000, 'duration': 0.03900337219238281}
+for n in range (35):
+    fibonacci_1(n)
+
+for n in range (10000):
+    fibonacci_2(n)
+    fibonacci_3(n)
+    fibonacci_4(n)
+
+print(fib1_count, fib2_count, fib3_count, fib4_count, sep='\n')
+
+"""
+for n from 0 to 9999 (from 0 to 34 for Recursive calculation):
+Recursive calculation:           {'count': 35, 'duration': 32.23584342002869} - worst result
+Dynamic programming calculation: {'count': 10000, 'duration': 0.022001981735229492} - best result
+Space optimization calculation:  {'count': 10000, 'duration': 12.613720655441284}
+Memoization calculation:         {'count': 10000, 'duration': 0.03900337219238281}
+"""
