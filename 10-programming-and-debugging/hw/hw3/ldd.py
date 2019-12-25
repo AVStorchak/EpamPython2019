@@ -1,0 +1,1 @@
+print('libc.so.6  test.py')
