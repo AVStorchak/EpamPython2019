@@ -74,10 +74,10 @@ if not os.path.isdir(input_path) and not input_path.endswith(permissible_extensi
     print(*permissible_extensions)
     sys.exit()
 
-#if not os.path.isdir(output_path):
-#    result = urlparse(output_path)
-#    if result.scheme == '' or result.netloc == '':
-#        sys.exit('Incorrect input path! Please specify a folder or a vaild URL!')
+if not os.path.isdir(output_path):
+    result = urlparse(output_path)
+    if result.scheme == '' or result.netloc == '':
+        sys.exit('Incorrect input path! Please specify a folder or a vaild URL!')
 
 if model_name == 'DT' and not args.DT_mode:
     sys.exit('Please provide a Decision Tree algorithm')
