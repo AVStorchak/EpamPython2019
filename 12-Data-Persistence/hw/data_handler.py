@@ -44,7 +44,15 @@ def run_files(mode, ser_opt, input_obj, file):
             result = deserialize(ser_opt, data_to_read)
             return result
 
-def run_redis(mode, ser_opt, obj, key):
+def redis_client(url):
+    if url:
+        if not url.startswith('redis://'):
+            url = 'redis://' + url
+        return redis.Redis.from_url(url)
+    else:
+        return redis.Redis(host='localhost', port=6379, db=0)
+
+def run_redis(mode, ser_opt, obj, key, url=None):
     """
     A function to store/retrieve data using Redis DB.
     Input parameters: 
@@ -52,8 +60,9 @@ def run_redis(mode, ser_opt, obj, key):
     - serialization option (json, pickle)
     - object to be stored
     - key to the data entry
+    - optional URL for a remote redis server
     """
-    r = redis.Redis(host='localhost', port=6379, db=0)
+    r = redis_client(url)
 
     if mode == 'w':
         data_to_store = serialize(ser_opt, obj)
@@ -66,7 +75,7 @@ def run_redis(mode, ser_opt, obj, key):
         result = deserialize(ser_opt, retrieved_data)
         return result
 
-def store(service, ser_opt, target, key):
+def store(service, ser_opt, target, key, server_url=None):
     """
     A function to store objects using the selected method.
     Input parameters: 
@@ -74,21 +83,28 @@ def store(service, ser_opt, target, key):
     - serialization option (json, pickle)
     - target object to be stored
     - key for the data srorage service (file name, password)
+    - remote server URL (optional)
     """
     try:
+        storage_options[service]('w', ser_opt, target, key, server_url)
+    except TypeError:
         storage_options[service]('w', ser_opt, target, key)
     except KeyError:
         print ("The storage service is not supported")
 
-def get(service, ser_opt, key):
+def get(service, ser_opt, key, server_url=None):
     """
     A function to retrieve objects using the selected method.
     Input parameters: 
     - storage service (file, redis)
     - serialization option (json, pickle)
     - key for the data srorage service (file name, password)
+    - remote server URL (optional)
     """
     try:
+        result = storage_options[service]('r', ser_opt, "", key, server_url)
+        return result
+    except TypeError:
         result = storage_options[service]('r', ser_opt, "", key)
         return result
     except KeyError:
