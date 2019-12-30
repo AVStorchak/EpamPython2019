@@ -82,7 +82,7 @@ def store(service, ser_opt, target, key, server_url=None):
     - storage service (file, redis)
     - serialization option (json, pickle)
     - target object to be stored
-    - key for the data srorage service (file name, password)
+    - key for the data storage service (file name, password)
     - remote server URL (optional)
     """
     try:
@@ -98,7 +98,7 @@ def get(service, ser_opt, key, server_url=None):
     Input parameters: 
     - storage service (file, redis)
     - serialization option (json, pickle)
-    - key for the data srorage service (file name, password)
+    - key for the data storage service (file name, password)
     - remote server URL (optional)
     """
     try:
