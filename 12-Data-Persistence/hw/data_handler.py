@@ -46,7 +46,10 @@ def run_files(mode, ser_opt, input_obj, file):
 
 def redis_client(url):
     if url:
-        if not url.startswith('redis://'):
+        if ''.join(url.rsplit('.')).isdigit():
+            r_port = int(input(f'Please specify redis port for {url} '))
+            return redis.Redis(host=url, port=r_port, db=0)
+        elif not url.startswith('redis://'):
             url = 'redis://' + url
         return redis.Redis.from_url(url)
     else:
